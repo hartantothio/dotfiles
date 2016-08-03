@@ -1,0 +1,130 @@
+" Incorporate from following resources:
+" - http://dougblack.io/words/a-good-vimrc.html
+" - https://github.com/amix/vimrc
+
+" ----------------------------------------
+" | COLORS
+" ----------------------------------------
+"
+" Colorscheme
+colorscheme molokai
+
+" Enable syntax highlighting
+syntax enable
+
+" 256 colors
+set t_Co=256
+
+" ----------------------------------------
+" | SPACES & TABS
+" ----------------------------------------
+"
+" # of visual spaces per <TAB>
+set tabstop=4
+
+" # of spaces per <TAB> when editing
+set expandtab
+
+" Smarter tab
+set smarttab
+
+" # of spaces to indent using < and >
+set shiftwidth=4
+
+" Auto indent
+set ai
+
+" Smart indent
+set si
+
+" ----------------------------------------
+" | UI CONFIG
+" ----------------------------------------
+"
+" Show line numbers
+set number
+
+" Highlight current line
+set cursorline
+
+" Load filetype-specific indent file
+filetype indent on
+
+" Visual autocomplete for command menu
+set wildmenu
+
+" Redraw only when we need to.
+"set lazyredraw
+
+" Highlight matching [{()}]
+set showmatch
+
+" ----------------------------------------
+" | SEARCH
+" ----------------------------------------
+"
+" Search as you type
+set incsearch
+
+" Highlight matches
+set hlsearch
+
+" Ignore case
+set ignorecase
+
+" ----------------------------------------
+" | FOLDING
+" ----------------------------------------
+"
+" Enable folding
+" set foldenable
+
+" Fold based on indent level
+" set foldmethod=indent
+
+" ----------------------------------------
+" | KEYBOARD BINDINGS
+" ----------------------------------------
+" | BINDINGS
+"
+" Change the leader key
+" let mapleader=","
+
+" | MOVEMENT
+"
+" Jump to the beginning
+"nnoremap ^ <nop>
+
+" Jump to the end
+"nnoremap $ <nop>
+
+" ----------------------------------------
+" | DIRECTORIES
+" ----------------------------------------
+"
+" Backup
+set backupdir=~/.vim/backup
+
+" ----------------------------------------
+" | MISC
+" ----------------------------------------
+"
+" Encoding
+set encoding=utf-8
+
+" Enable copy using mouse
+set mouse=a
+
+set ts=4
+set et
+
+
+" Highlight lines that are over 80 chars long
+"highlight OverLength ctermbg=red ctermfg=white guibg=#592929
+"match OverLength /\%81v.\+/
+
+" Set these file extensions as PHP
+au BufNewFile,BufRead *.ros,*.php,*.php\d     setf php
+
+" Set these file extensions as JS
+au BufNewFile,BufRead *.js,*.json     setf javascript

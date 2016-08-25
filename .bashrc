@@ -8,6 +8,10 @@ source ~/.git-prompt.sh
 export CLICOLOR=1
 export LSCOLORS=GxFxCxDxBxegedabagaced
 
+function git_branch {
+  git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/(\1)/'
+}
+
 function prompt {
   local BLACK="\[\033[0;30m\]"
   local BLACKBOLD="\[\033[1;30m\]"
@@ -27,7 +31,7 @@ function prompt {
   local WHITEBOLD="\[\033[1;37m\]"
   local RESETCOLOR="\[\e[00m\]"
 
-  export PS1="\n$RED\u $PURPLE@ $YELLOW\w $RESETCOLOR$GREENBOLD\$(git branch 2> /dev/null)\n→ $RESETCOLOR"
+  export PS1="\n$RED\u $PURPLE@ $YELLOW\w $RESETCOLOR$GREENBOLD\$(git_branch)\n→ $RESETCOLOR"
   export PS2=" | → $RESETCOLOR"
 }
 

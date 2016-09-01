@@ -8,6 +8,9 @@ source ~/.git-prompt.sh
 export CLICOLOR=1
 export LSCOLORS=GxFxCxDxBxegedabagaced
 
+# Default editor
+export EDITOR=vim
+
 function git_branch {
   git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/(\1)/'
 }

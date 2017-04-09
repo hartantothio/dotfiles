@@ -1,14 +1,20 @@
+# Source global definitions
+if [ -f /etc/bashrc ]; then
+  . /etc/bashrc
+fi
+
 # https://github.com/git/git/blob/master/contrib/completion/git-completion.bash
-source $(pwd)/.git-completion.bash
+source $HOME/.git-completion.bash
 
 # https://github.com/git/git/blob/master/contrib/completion/git-prompt.sh
-source $(pwd)/.git-prompt.sh
+source $HOME/.git-prompt.sh
 
 # Terminal colors
 export CLICOLOR=1
 export LSCOLORS=GxFxCxDxBxegedabagaced
 
 # Default editor
+alias vi=vim
 export EDITOR=vim
 
 function git_branch {
@@ -33,11 +39,17 @@ function prompt {
   local WHITE="\[\033[0;37m\]"
   local WHITEBOLD="\[\033[1;37m\]"
   local RESETCOLOR="\[\e[00m\]"
+  local STY="${STY}" # screen name
 
-  export PS1="\n$RED\u $PURPLE@ $YELLOW\w $CYAN[${STY}] $RESETCOLOR$GREENBOLD\$(git_branch)\n→ $RESETCOLOR"
+  if [ "${STY}" != "" ]; then
+    STY="$WHITE[$STY] "
+  fi
+
+  export PS1="\n$RED\u$PURPLE@$CYAN\H $YELLOW\w $STY$RESETCOLOR$GREENBOLD\$(git_branch)\n→ $RESETCOLOR"
   export PS2=" | → $RESETCOLOR"
 }
 
 prompt
 
+# Shortcuts/alises
 alias ll='ls -lshat'

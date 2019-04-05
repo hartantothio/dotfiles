@@ -9,6 +9,9 @@ source $HOME/.git-completion.bash
 # https://github.com/git/git/blob/master/contrib/completion/git-prompt.sh
 source $HOME/.git-prompt.sh
 
+# enable forward search
+stty -ixon
+
 # Terminal colors
 export CLICOLOR=1
 export LSCOLORS=GxFxCxDxBxegedabagaced

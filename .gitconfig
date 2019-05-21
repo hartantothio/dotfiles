@@ -6,6 +6,8 @@
 [core]
     autocrlf = input
     editor = vim
+[push]
+    default = simple
 [alias]
     co = checkout
     cob = checkout -b

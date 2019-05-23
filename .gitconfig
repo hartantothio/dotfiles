@@ -3,6 +3,7 @@
     email = 
 [color]
     ui = true
+    diff = true
 [core]
     autocrlf = input
     editor = vim

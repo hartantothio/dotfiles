@@ -7,6 +7,7 @@
 [core]
     autocrlf = input
     editor = vim
+    ignorecase = false
 [push]
     default = simple
 [alias]

@@ -1,6 +1,8 @@
-if [ -f ~/.aliases ]; then
-    source ~/.aliases
-fi
+export ZSH="${HOME}/.oh-my-zsh"
+
+# aliases
+source $ZSH/oh-my-zsh.sh
+source $HOME/.aliases
 
 # Terminal colors
 export CLICOLOR=1

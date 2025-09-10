@@ -30,3 +30,13 @@ alias lsd="ls -lF ${colorflag} | grep --color=never '^d'"
 
 # Always use color output for `ls`
 alias ls="command ls ${colorflag}"
+
+### Work
+alias dev="just dev-tmux-web"
+#alias integration="just dev-start-integration"
+alias types="turbo generate-types"
+alias typecheck="turbo typecheck"
+alias typecheck-web="turbo typecheck -F web-client"
+alias make-types="just generate-types"
+alias story="just dev-storybook"
+alias test="just unit-test"

@@ -1,31 +1,88 @@
-[user]
-    name = Hartanto Thio
-    email = 
-[color]
-    ui = true
-    diff = true
-[core]
-    autocrlf = input
-    editor = vim
-    ignorecase = false
-[push]
-    default = simple
 [alias]
+
     co = checkout
+
     cob = checkout -b
+
     br = branch
+
     bra = branch -a
+
     brd = branch -d
+
     brD = branch -D
+
     st = status
+
     aa = add -A .
+
     cm = commit -m
-    # git push -u origin [branch_name]
+
     po = push origin
+
     pom = push origin master
+
     plo = pull origin
+
     plom = pull origin master
+
     unstage = reset HEAD --
+
     ls = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate
+
     ll = log --graph --abbrev-commit --decorate --date=relative --format=format:'%C(bold red)%h%C(reset) %C(bold green)(%ar)%C(reset) %C(bold blue)(%an)%C(reset) %C(white)%s%C(reset)%C(bold yellow)%d%C(reset)' --all
+
     r = remote -v
+
+[color]
+
+	# Use colors in Git commands that are capable of colored output when
+	# outputting to the terminal. (This is the default setting in Git ≥ 1.8.4.)
+	ui = auto
+
+[color "branch"]
+
+	current = yellow reverse
+	local = yellow
+	remote = green
+
+[color "diff"]
+
+	meta = yellow bold
+	frag = magenta bold # line info
+	old = red # deletions
+	new = green # additions
+
+[color "status"]
+
+	added = yellow
+	changed = green
+	untracked = cyan
+
+[diff]
+
+	# Detect copies as well as renames.
+	renames = copies
+
+[diff "bin"]
+
+	# Use `hexdump` to diff binary files.
+	textconv = hexdump -v -C
+
+[help]
+
+	# Automatically correct and execute mistyped commands.
+	autocorrect = 1
+
+[merge]
+
+	# Include summaries of merged commits in newly created merge commit messages
+	log = true
+
+[push]
+
+	# https://git-scm.com/docs/git-config#git-config-pushdefault
+	default = simple
+	# Make `git push` push relevant annotated tags when pushing branches out.
+	followTags = true
+    

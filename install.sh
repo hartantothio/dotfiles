@@ -21,3 +21,10 @@ create_symlinks() {
 }
 
 create_symlinks
+
+### Install vim theme
+mkdir -p ~/.vim/colors
+mkdir -p ~/.vim/backup
+git clone https://github.com/tomasr/molokai.git
+mv molokai/colors/molokai.vim ~/.vim/colors/
+rm -rf molokai

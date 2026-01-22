@@ -1,0 +1,89 @@
+#!/usr/bin/env bash
+
+# Default editor
+export EDITOR=vim
+
+# fzf configuration
+export FZF_DEFAULT_OPTS='--height 40% --layout=reverse --border'
+
+# Source fzf keybindings and completion
+if [ -f ~/.fzf.zsh ]; then
+    # Git clone install
+    source ~/.fzf.zsh
+elif [ -f /opt/homebrew/opt/fzf/shell/key-bindings.zsh ]; then
+    # Homebrew on Apple Silicon
+    source /opt/homebrew/opt/fzf/shell/completion.zsh
+    source /opt/homebrew/opt/fzf/shell/key-bindings.zsh
+elif [ -f /usr/local/opt/fzf/shell/key-bindings.zsh ]; then
+    # Homebrew on Intel Mac
+    source /usr/local/opt/fzf/shell/completion.zsh
+    source /usr/local/opt/fzf/shell/key-bindings.zsh
+elif [ -f /usr/share/doc/fzf/examples/key-bindings.zsh ]; then
+    # Debian/Ubuntu (apt install fzf)
+    source /usr/share/doc/fzf/examples/completion.zsh 2>/dev/null
+    source /usr/share/doc/fzf/examples/key-bindings.zsh
+elif [ -f /usr/share/fzf/key-bindings.zsh ]; then
+    # Arch Linux / other distros
+    source /usr/share/fzf/completion.zsh 2>/dev/null
+    source /usr/share/fzf/key-bindings.zsh
+fi
+
+# Starship prompt (using defaults - customize with ~/.config/starship.toml)
+eval "$(starship init zsh)"
+
+# Directory navigation
+alias ..="cd .."
+alias ...="cd ../.."
+
+# Shortcuts
+alias g="git"
+alias gsync="g co main && g fo && g plo"
+alias ll='ls -lshat'
+alias chrome_nosecure='open -n -a /Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome --args --user-data-dir="/tmp/chrome_dev_test" --disable-web-security'
+alias vi=vim
+
+### Git
+alias gmain="g co main && g fetch origin -p && g pull"
+
+### Cursor Setup
+cursor_setup() {
+        echo "🔧  Setting up Cursor..."
+
+    # Extensions to install
+    local extensions=(
+        # One Dark Darker
+        "JoelCrosby.one-dark-darker",
+        # Better comments
+        "aaron-bond.better-comments"
+        # JSON
+        "ClemensPeters.format-json"
+        # GitLens
+        "eamodio.gitlens"
+        # Auto rename tag
+        "formulahendry.auto-rename-tag"
+        # GitHub pull request
+        "GitHub.vscode-pull-request-github"
+        # Pretty TS errors
+        "yoavbls.pretty-ts-errors",
+        # Auto collapse explorer
+        "lukegeneva.auto-collapse-explorer"
+        # VSCode Icons
+        "vscode-icons-team.vscode-icons"
+        # TODO Highlight
+        "wayou.vscode-todo-highlight"
+    )
+
+    # Install extensions for Cursor
+    if command -v cursor &> /dev/null && cursor --version &> /dev/null; then
+        echo "📦  Installing extensions for Cursor..."
+        for ext in "${extensions[@]}"; do
+            cursor --install-extension "$ext" 2>/dev/null || true
+        done
+        echo "✅  Extensions installed."
+    else
+        echo "⚠️  Cursor not found. Skipping extension installation."
+    fi
+
+    echo ""
+    echo "✅  Cursor setup complete!"
+}

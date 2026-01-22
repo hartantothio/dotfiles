@@ -1,0 +1,54 @@
+{
+  "css.lint.duplicateProperties": "error",
+  "cursor.composer.shouldChimeAfterChatFinishes": true,
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": "explicit"
+  },
+  "editor.cursorStyle": "block",
+  "editor.fontFamily": "Noto Sans Mono",
+  "editor.fontLigatures": false,
+  "editor.fontSize": 15,
+  "editor.formatOnSave": true,
+  "editor.formatOnPaste": false,
+  "editor.minimap.enabled": false,
+  "editor.renderWhitespace": "all",
+  "editor.rulers": [
+    120
+  ],
+  "editor.tabSize": 2,
+  "editor.wordWrap": "wordWrapColumn",
+  "editor.wordWrapColumn": 120,
+  "files.associations": {
+    "*.js": "javascriptreact",
+    "*.env.*": "env"
+  },
+  "files.insertFinalNewline": true,
+  "javascript.validate.enable": false,
+  "json.schemas": [],
+  "scss.lint.duplicateProperties": "error",
+  "scss.lint.zeroUnits": "error",
+  "search.collapseResults": "alwaysCollapse",
+  "terminal.integrated.fontFamily": "MesloLGS NF",
+  "terminal.integrated.fontSize": 14,
+  "todohighlight.keywords": [
+    {
+      "text": "@FIXME",
+      "color": "#fff",
+      "backgroundColor": "#ff0000"
+    },
+    {
+      "text": "@TODO",
+      "color": "#333333",
+      "backgroundColor": "#ebc934"
+    }
+  ],
+  "vsicons.dontShowNewVersionMessage": true,
+  "workbench.colorCustomizations": {
+    "tab.activeBorder": "#fff",
+    "tab.activeBackground": "#333"
+  },
+  "workbench.colorTheme": "One Dark Darker",
+  "workbench.editor.enablePreview": false,
+  "workbench.iconTheme": "vscode-icons",
+  "workbench.tree.indent": 15
+}

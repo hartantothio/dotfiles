@@ -51,6 +51,9 @@
     # Make `git push` push relevant annotated tags when pushing branches out.
     followTags = true
 
+    # Automatically set up remote tracking branches when pushing
+    autoSetupRemote = true
+
 [alias]
 
     co = checkout
